@@ -13,7 +13,7 @@ if (is_array($_GET) && count($_GET) > 0) {
         $count=intval($_GET["count"]);
     }
 }
-$url='https://ss.rohankdd.com/ss.php?_='.get_total_millisecond();
+$url='https://free-ss.site/ss.json?_='.get_total_millisecond();
 $ch = curl_init();
 $timeout = 5; 
 curl_setopt ($ch, CURLOPT_URL, 'http://www.ccvita.com');
