@@ -22,6 +22,8 @@ curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 $lines_string = curl_exec($ch);
 curl_close($ch);
 
+echo $lines_string;
+
 $data = (array)json_decode($lines_string);
 $groupName = str_replace('=','',base64_encode("动态节点"));
 $index = 0;
