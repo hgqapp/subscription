@@ -14,7 +14,14 @@ if (is_array($_GET) && count($_GET) > 0) {
     }
 }
 $url='https://ss.rohankdd.com/ss.php?_='.get_total_millisecond();
-$lines_string = file_get_contents($url);
+$ch = curl_init();
+$timeout = 5; 
+curl_setopt ($ch, CURLOPT_URL, 'http://www.ccvita.com');
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
+curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+$lines_string = curl_exec($ch);
+curl_close($ch);
+
 $data = (array)json_decode($lines_string);
 $groupName = str_replace('=','',base64_encode("动态节点"));
 $index = 0;
